@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { logIn } from "./api/auth";
 import { getBandwidth } from "./api/graphs";
+import { CapacityChart } from "./components/Capacity/Capicity";
 import './App.css';
 
 const App = () => {
@@ -32,13 +33,14 @@ const App = () => {
 		from.setDate(to.getDate() - 15)
 
 		getBandwidth({ session_token: token, from: from.getTime(), to: to.getTime() })
-			.then(data => setBandwidth(data))
+			.then(data => setBandwidth(data))		
 	}
 
 	return (
 		<div className="App">
 			{token}
 			<button onClick={getData}>GET DATA</button>
+			{bandwidth ? <CapacityChart bandwidthData={bandwidth} /> : null}
 		</div>
 	);
 }
