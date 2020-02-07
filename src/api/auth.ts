@@ -9,8 +9,8 @@ function logIn(credentials: Credentials) {
     return postData(endpoint+'/auth', credentials)
 }
 
-function logOut(){
-
+function logOut(token: number){
+    return postData(endpoint+'/logout', token)
 }
 
 
