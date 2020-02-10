@@ -44,11 +44,11 @@ const App = () => {
 		}
 
 
-		const temp = { identifiant: "urtoob", password: "ToobRU" }
+		const credentials = { identifiant: "urtoob", password: "ToobRU" }
 		const localToken = localStorage.getItem('token')
 
 		if (!localToken) {
-			logIn(temp).then(token => {
+			logIn(credentials).then(token => {
 				setToken(token.session_token)
 				localStorage.setItem('token', token.session_token)
 			})
