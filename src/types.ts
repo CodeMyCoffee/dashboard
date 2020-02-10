@@ -1,5 +1,5 @@
 export interface GraphData {
-    time: number,
+    time: String,
     valueP2P: number,
     valueCDN: number
 }

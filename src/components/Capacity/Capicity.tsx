@@ -24,7 +24,7 @@ const Capacity = ({ bandwidthData }: any) => {
             const valueCDN = formatBytes(cdn[index][1])
 
             const value = {
-                time: time.getUTCDate(),
+                time: time.toDateString(),
                 valueP2P,
                 valueCDN,
             }
@@ -54,8 +54,8 @@ const Capacity = ({ bandwidthData }: any) => {
                 <Tooltip />
                 <Area type="monotone" dataKey="valueP2P" stroke="#8884d8" fillOpacity={1} fill="#12A5ED" />
                 <Area type="monotone" dataKey="valueCDN" stroke="#82ca9d" fillOpacity={1} fill="#C42151" />
-                <ReferenceLine y={maxCDN} label="Maximum CDN contribution" stroke="#9A193E" strokeDasharray="3 3" />
-                <ReferenceLine y={maxSum} label="Maximum Throughput" stroke="#3FCB7E" strokeDasharray="3 3" />
+                <ReferenceLine y={maxCDN} label={`Maximum CDN contribution: ${maxCDN}`} stroke="#9A193E" strokeDasharray="3 3" />
+                <ReferenceLine y={maxSum} label={`Maximum Throughput: ${maxSum}`} stroke="#3FCB7E" strokeDasharray="3 3" />
             </AreaChart>
         </ResponsiveContainer>
 

@@ -15,7 +15,7 @@ const Viewers = ({ audienceData }: any) => {
             const time = new Date(arr[0])
 
             const value = {
-                time: time.getUTCDate(),
+                time: time.toDateString(),
                 value: arr[1],
             }
 

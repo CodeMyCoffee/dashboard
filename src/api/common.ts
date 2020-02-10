@@ -10,8 +10,11 @@ async function postData(url = '', data = {}) {
         },
 
         body: JSON.stringify(data)
-    });
-    return await response.json();
+    })
+    .then(res => res.json())
+    .catch(err => console.log(err))
+
+    return await response;
 }
 
 export {
