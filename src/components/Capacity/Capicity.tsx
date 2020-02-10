@@ -1,5 +1,5 @@
 import React from "react";
-import { formatBytes } from "../../helpers";
+import { formatBytes, styles } from "../../helpers";
 import { DefaultData, GraphData } from "../../types";
 import {
     XAxis, YAxis, ResponsiveContainer,
@@ -43,15 +43,15 @@ const Capacity = ({ bandwidthData }: any) => {
     }
 
     return (
-        <ResponsiveContainer width={"100%"} height={500}>
+        <ResponsiveContainer width={"100%"} height={250}>
             <AreaChart width={730} height={250} data={reformatData(bandwidthData)}
                 margin={{ top: 10, right: 30, left: 0, bottom: 0 }}>
                 <XAxis dataKey="time" />
                 <YAxis domain={[0, maxSum]} />
                 <Legend />
                 <Tooltip />
-                <Area type="monotone" dataKey="valueP2P" stroke="#8884d8" fillOpacity={1} fill="#12A5ED" />
-                <Area type="monotone" dataKey="valueCDN" stroke="#82ca9d" fillOpacity={1} fill="#C42151" />
+                <Area type="monotone" dataKey="valueP2P" strokeWidth={1.5} stroke={styles.Twilight} fillOpacity={1} fill={styles.Azure} />
+                <Area type="monotone" dataKey="valueCDN" strokeWidth={1.5} stroke={styles.Velvet} fillOpacity={1} fill={styles.HotPink} />
                 <ReferenceLine y={maxCDN} label={`Maximum CDN contribution: ${maxCDN}`} stroke="#9A193E" strokeDasharray="3 3" />
                 <ReferenceLine y={maxSum} label={`Maximum Throughput: ${maxSum}`} stroke="#3FCB7E" strokeDasharray="3 3" />
             </AreaChart>

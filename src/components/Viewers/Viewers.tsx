@@ -3,6 +3,7 @@ import {
     XAxis, YAxis, ResponsiveContainer,
     Tooltip, Legend, Line, LineChart
 } from 'recharts';
+import { styles } from "../../helpers";
 
 const Viewers = ({ audienceData }: any) => {
     const reformatData = (data:any): {time:number, value:number}[] => {
@@ -26,14 +27,14 @@ const Viewers = ({ audienceData }: any) => {
     
 
     return (
-        <ResponsiveContainer width={"100%"} height={500}>
+        <ResponsiveContainer width={"100%"} height={250}>
             <LineChart width={730} height={250} data={reformatData(audienceData)}
                 margin={{ top: 5, right: 30, left: 20, bottom: 5 }}>
                 <XAxis dataKey="time" />
                 <YAxis />
                 <Tooltip />
                 <Legend />
-                <Line type="monotone" dataKey="value" stroke="#8884d8" />
+                <Line type="monotone" dataKey="value" stroke={styles.BurntYellow} />
             </LineChart>
         </ResponsiveContainer>
     )
