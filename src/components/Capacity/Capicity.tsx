@@ -2,7 +2,6 @@ import React from "react";
 import { formatBytes } from "../../helpers";
 import { DefaultData, GraphData } from "../../types";
 import {
-    CartesianGrid,
     XAxis, YAxis, ResponsiveContainer,
     Tooltip, Legend, AreaChart, Area, ReferenceLine
 } from 'recharts';
@@ -49,7 +48,6 @@ const Capacity = ({ bandwidthData }: any) => {
                 margin={{ top: 10, right: 30, left: 0, bottom: 0 }}>
                 <XAxis dataKey="time" />
                 <YAxis domain={[0, maxSum]} />
-                <CartesianGrid strokeDasharray="3 3" />
                 <Legend />
                 <Tooltip />
                 <Area type="monotone" dataKey="valueP2P" stroke="#8884d8" fillOpacity={1} fill="#12A5ED" />

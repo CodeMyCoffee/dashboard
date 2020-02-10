@@ -1,6 +1,5 @@
 import React from "react";
 import {
-    CartesianGrid,
     XAxis, YAxis, ResponsiveContainer,
     Tooltip, Legend, Line, LineChart
 } from 'recharts';
@@ -30,7 +29,6 @@ const Viewers = ({ audienceData }: any) => {
         <ResponsiveContainer width={"100%"} height={500}>
             <LineChart width={730} height={250} data={reformatData(audienceData)}
                 margin={{ top: 5, right: 30, left: 20, bottom: 5 }}>
-                <CartesianGrid strokeDasharray="3 3" />
                 <XAxis dataKey="time" />
                 <YAxis />
                 <Tooltip />
